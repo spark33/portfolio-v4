@@ -9,7 +9,7 @@ interface Project {
   title: string;
   description: string;
   tags: string[];
-  github: string;
+  github?: string;
   external?: string;
   image?: string;
 }
@@ -17,56 +17,62 @@ interface Project {
 const Projects: React.FC = () => {
   const featuredProjects: Project[] = [
     {
-      title: "Featured Project Title",
+      title: "FactChat",
       description:
-        "A web app for visualizing personalized data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.",
-      tags: ["React", "Express", "Spotify API", "Tailwind CSS"],
+        "A multi-LLM platform designed for education. The platform leverages multiple large language models to provide educational content and enhance learning experiences. Built with a focus on user experience and educational efficacy.",
+      tags: ["React", "NextJS", "TypeScript", "AI Integration", "UI/UX Design"],
       image: "/project1.jpg",
-      github: "https://github.com",
-      external: "https://example.com",
+      external: "https://docs.mindlogic.ai",
     },
     {
-      title: "Another Amazing Project",
+      title: "MongoDB AI Chatbot UI Component Library",
       description:
-        "A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.",
-      tags: ["VS Code", "Sublime Text", "Atom", "iTerm2"],
+        "Led the architecture and implementation of MongoDB's first reusable AI chatbot UI component library. This system was built using ReactJS and enabled consistent chatbot experiences across MongoDB's digital products.",
+      tags: [
+        "React",
+        "TypeScript",
+        "StorybookJS",
+        "Component Architecture",
+        "AI Integration",
+      ],
       image: "/project2.jpg",
-      github: "https://github.com",
-      external: "https://marketplace.visualstudio.com",
     },
   ];
 
   const otherProjects: Project[] = [
     {
-      title: "Time to Have More Fun",
+      title: "Socius",
       description:
-        "A simple calendar that lets you add reminders for upcoming activities so you know how many days until your next life adventure.",
-      tags: ["React", "Firebase", "Node"],
-      github: "https://github.com",
+        "An app that helps street outreach teams input and track requests, claim requests in the area, and measure the long-run impact of their work. Designed and developed the first working version with interactive Google Map on Ruby on Rails.",
+      tags: ["Ruby on Rails", "Google Maps API", "UI/UX Design"],
       external: "https://example.com",
     },
     {
-      title: "Personal Website v1",
+      title: "TokenUnion",
       description:
-        "My first portfolio website built with HTML, CSS, and JavaScript. This project taught me a ton about responsive design and CSS animations.",
-      tags: ["HTML", "CSS", "JavaScript"],
-      github: "https://github.com",
+        "Developed front-end components and interactions for tokenunion.io and WIP core product. TokenUnion automatically rewards users for holding Ether or ERC20 tokens.",
+      tags: ["React", "Web3", "Cryptocurrency", "Frontend Development"],
       external: "https://example.com",
     },
     {
-      title: "Weather App",
+      title: "Scheduling App",
       description:
-        "A nicer look at your local weather forecast built with React. Features current conditions, hourly and five-day forecasts.",
-      tags: ["React", "OpenWeather API", "CSS Modules"],
-      github: "https://github.com",
+        "MEAN stack scheduling app with reporting CRUD functionalities. Built for CMU Computing Services to simplify shift trading, shift-specific reporting, and employee performance tracking on an intuitive interface.",
+      tags: [
+        "MongoDB",
+        "Express",
+        "Angular",
+        "Node.js",
+        "Materialize",
+        "jQuery",
+      ],
+      external: "https://example.com",
     },
     {
-      title: "Interactive Todo App",
+      title: "TrialFinder",
       description:
-        "A task management application with drag-and-drop functionality, dark/light mode toggle, and local storage integration.",
-      tags: ["React", "TypeScript", "Local Storage"],
-      github: "https://github.com",
-      external: "https://example.com",
+        "Awarded Best Healthcare Hack at University of Pittsburgh's SteelHacks. TrialFinder matched patients to open clinical trials from the NIH database by cross-checking the eligibility criteria for the study with the patient's personal health profile.",
+      tags: ["Healthcare", "API Integration", "Hackathon Project"],
     },
   ];
 
@@ -141,15 +147,17 @@ const Projects: React.FC = () => {
                     ))}
                   </ul>
                   <div className="flex gap-4">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-lightest-slate hover:text-green"
-                      aria-label="GitHub Repository"
-                    >
-                      <FiGithub size={20} />
-                    </a>
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-lightest-slate hover:text-green"
+                        aria-label="GitHub Repository"
+                      >
+                        <FiGithub size={20} />
+                      </a>
+                    )}
                     {project.external && (
                       <a
                         href={project.external}

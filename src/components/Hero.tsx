@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
         transition={{ duration: 0.5, delay: 0.3 }}
         className="text-5xl md:text-7xl font-bold text-lightest-slate mb-4"
       >
-        Your Name.
+        Sean Park.
       </motion.h1>
 
       <motion.h2
@@ -30,7 +30,7 @@ const Hero: React.FC = () => {
         transition={{ duration: 0.5, delay: 0.4 }}
         className="text-4xl md:text-6xl font-bold text-slate mb-8"
       >
-        I build things for the web.
+        I design and build digital experiences.
       </motion.h2>
 
       <motion.p
@@ -39,9 +39,10 @@ const Hero: React.FC = () => {
         transition={{ duration: 0.5, delay: 0.5 }}
         className="max-w-lg text-lg text-slate mb-12"
       >
-        I'm a frontend developer specializing in building exceptional digital
-        experiences. Currently, I'm focused on building accessible,
-        human-centered products.
+        I'm a frontend engineer specializing in building exceptional digital
+        experiences. Currently at Mindlogic, I focus on designing and
+        implementing UI/UX for AI-powered applications, with previous experience
+        at MongoDB and Deloitte Digital.
       </motion.p>
 
       <motion.div

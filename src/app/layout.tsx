@@ -4,13 +4,14 @@ import "./globals.css";
 import type { Metadata } from "next";
 import SideNav from "@/components/SideNav";
 import SideLinks from "@/components/SideLinks";
+import ScrollProgress from "@/components/ScrollProgress";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Shiyu Park | Portfolio",
+  title: "Sean Park | Frontend Engineer",
   description:
-    "Senior Software Engineer specializing in building exceptional digital experiences",
+    "Frontend Engineer specializing in building exceptional digital experiences with React and TypeScript. Currently at Mindlogic Inc.",
 };
 
 export default function RootLayout({
@@ -21,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.className} bg-navy text-slate`}>
+        <ScrollProgress />
         <div className="mx-auto max-w-screen-2xl px-6 md:px-12 lg:px-24">
           <div className="grid grid-cols-1 lg:grid-cols-12 min-h-screen gap-8 lg:gap-12">
             {/* Left side - sticky */}

@@ -1,7 +1,7 @@
 // components/Experience.tsx
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 
 interface JobSkill {
@@ -17,44 +17,49 @@ interface Job {
 }
 
 const Experience: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<number>(0);
-
   const jobs: Job[] = [
     {
-      company: "Company One",
-      title: "Senior Frontend Developer",
-      date: "January 2022 - Present",
+      company: "Mindlogic Inc",
+      title: "Frontend Engineer",
+      date: "April 2024 - Present",
       duties: [
-        "Develop and maintain major features of the company's customer-facing web application",
-        "Work with a variety of languages, platforms, frameworks, and content management systems such as JavaScript, TypeScript, React, Next.js, and Contentful",
-        "Communicate with multi-disciplinary teams of engineers, designers, producers, and clients on a daily basis",
-        "Lead the development team in implementing accessibility standards across all projects",
+        "Designing and building FactChat, a multi-LLM platform designed for education",
+        "Designing and building docs.mindlogic.ai",
+        "Managing the UI/UX design and frontend engineering for the digital transformation of an embeddable AI chatbot plugin supporting 5 locales",
+        "Managing the UI/UX design and frontend engineering for the digital transformation of the UI customization / management dashboard",
+        "Building the company website and other external client POCs and deliverables in React / React Native",
       ],
-      skills: ["React", "Next.js", "TypeScript", "GraphQL"],
+      skills: ["React", "React Native", "NextJS", "UI/UX Design"],
     },
     {
-      company: "Company Two",
-      title: "Frontend Developer",
-      date: "July 2020 - December 2021",
+      company: "MongoDB",
+      title: "UI Engineer",
+      date: "February 2022 - January 2024",
       duties: [
-        "Built and shipped the company's first mobile app using React Native",
-        "Architected and implemented the frontend of a new product feature that increased user engagement by 20%",
-        "Collaborated with UX team to implement design system components",
-        "Conducted code reviews and mentored junior developers",
+        "Led the architecture and implementation of MongoDB's first reusable AI chatbot UI component library using ReactJS",
+        "Led the architecture and development of web features for NextJS documentation site including Okta SSO integration and 2 CMS migrations",
+        "Implemented features and improvements across component library including dark mode implementation, major StorybookJS upgrades, and component file structure standardization",
       ],
-      skills: ["React", "React Native", "JavaScript", "Redux"],
+      skills: [
+        "React",
+        "NextJS",
+        "StorybookJS",
+        "SSO Integration",
+        "TypeScript",
+      ],
     },
     {
-      company: "Company Three",
-      title: "Web Developer",
-      date: "March 2019 - June 2020",
+      company: "Deloitte Digital",
+      title: "Frontend Engineer",
+      date: "September 2019 - February 2022",
       duties: [
-        "Developed and styled interactive web applications for various clients",
-        "Built and shipped the marketing website for a startup that helped secure additional funding",
-        "Interface with clients on a weekly basis, providing technological expertise",
-        "Collaborated with designers to implement responsive, mobile-first websites",
+        "Performed duties of a front-end architect & lead developer, making technical stack decisions, setting development standards & socializing decisions to the client's lead technical architects & developers",
+        "Mentored 6 developers in India in React / Typescript / NextJS & delivering features ahead of schedule",
+        "Led bi-weekly feature demos for client's broader business teams & weekly code reviews with client's lead developers",
+        "Owned code-level front-end architecture decisions around state management & codebase file structure that were later reused in other Deloitte Digital assets",
+        "Enhanced static UI/UX designs with micro-interactions during development phase",
       ],
-      skills: ["JavaScript", "HTML", "CSS", "WordPress"],
+      skills: ["React", "TypeScript", "NextJS", "Architecture", "Mentoring"],
     },
   ];
 
@@ -70,64 +75,57 @@ const Experience: React.FC = () => {
         <span className="section-number">02.</span> Where I've Worked
       </motion.h2>
 
-      <div className="grid grid-cols-12 gap-4 mt-10">
-        {/* Tab List */}
-        <motion.div
-          className="col-span-12 md:col-span-3 flex md:flex-col overflow-x-auto md:overflow-visible mb-5 md:mb-0 border-b md:border-b-0 md:border-l border-lightest-navy"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          {jobs.map((job, i) => (
-            <button
-              key={i}
-              className={`px-5 py-3 font-mono text-sm whitespace-nowrap md:border-l-2 md:border-b-0 border-l-0 border-b-2 transition-colors duration-300 ${
-                activeTab === i
-                  ? "text-green border-green bg-light-navy/30 md:bg-light-navy/30"
-                  : "text-slate border-transparent hover:text-green hover:bg-light-navy/10"
-              }`}
-              onClick={() => setActiveTab(i)}
-            >
-              {job.company}
-            </button>
-          ))}
-        </motion.div>
+      <div className="mt-10 space-y-16">
+        {jobs.map((job, jobIndex) => (
+          <motion.div
+            key={jobIndex}
+            className="relative"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, delay: jobIndex * 0.1 }}
+          >
+            {/* Timeline connector */}
+            {jobIndex < jobs.length - 1 && (
+              <div className="absolute left-[7px] top-[70px] bottom-[-80px] w-[2px] bg-lightest-navy"></div>
+            )}
 
-        {/* Tab Content */}
-        <motion.div
-          className="col-span-12 md:col-span-9 p-1"
-          key={activeTab}
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          <h3 className="text-xl text-lightest-slate font-medium">
-            {jobs[activeTab].title}
-            <span className="text-green"> @ {jobs[activeTab].company}</span>
-          </h3>
-          <p className="font-mono text-sm mt-1 mb-4 text-slate">
-            {jobs[activeTab].date}
-          </p>
-          <ul className="space-y-4">
-            {jobs[activeTab].duties.map((duty, i) => (
-              <li key={i} className="flex items-start">
-                <span className="text-green mr-2 mt-1">▹</span>
-                <span>{duty}</span>
-              </li>
-            ))}
-          </ul>
-          <div className="mt-6 flex flex-wrap gap-2">
-            {jobs[activeTab].skills.map((skill, i) => (
-              <span
-                key={i}
-                className="px-3 py-1 bg-light-navy rounded text-green text-sm font-mono"
-              >
-                {skill}
-              </span>
-            ))}
-          </div>
-        </motion.div>
+            {/* Experience card */}
+            <div className="flex gap-5">
+              {/* Timeline dot */}
+              <div className="flex-shrink-0 w-4 h-4 rounded-full bg-green mt-[6px] z-10"></div>
+
+              {/* Content */}
+              <div className="flex-grow">
+                <h3 className="text-xl text-lightest-slate font-medium flex flex-wrap items-baseline">
+                  <span>{job.title}</span>
+                  <span className="text-green ml-2"> @ {job.company}</span>
+                </h3>
+                <p className="font-mono text-sm mt-1 mb-4 text-slate">
+                  {job.date}
+                </p>
+                <ul className="space-y-4 mb-4">
+                  {job.duties.map((duty, i) => (
+                    <li key={i} className="flex items-start">
+                      <span className="text-green mr-2 mt-1">▹</span>
+                      <span>{duty}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="flex flex-wrap gap-3 mt-4">
+                  {job.skills.map((skill, i) => (
+                    <span
+                      key={i}
+                      className="inline-flex items-center px-4 py-1.5 bg-navy border border-lightest-navy rounded-full text-green text-xs font-mono whitespace-nowrap"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </>
   );

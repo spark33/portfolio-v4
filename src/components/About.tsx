@@ -6,14 +6,14 @@ import { motion } from "framer-motion";
 
 const About: React.FC = () => {
   const skills: string[] = [
-    "JavaScript (ES6+)",
-    "TypeScript",
     "React",
-    "Next.js",
-    "Node.js",
-    "Tailwind CSS",
-    "Express",
-    "MongoDB",
+    "React Native",
+    "TypeScript",
+    "JavaScript",
+    "NextJS",
+    "Ruby on Rails",
+    "UI/UX Design",
+    "StorybookJS",
   ];
 
   return (
@@ -38,17 +38,19 @@ const About: React.FC = () => {
         >
           <div className="space-y-4 text-slate">
             <p>
-              Hello! I'm Shiyu Park, a software engineer passionate about
-              creating beautiful, functional and accessible websites. My journey
-              in web development started back in 2018 when I decided to try
-              creating custom themes — turns out hacking together a custom
-              reblog button taught me a lot about HTML & CSS!
+              Hello! I'm Sean Park, a frontend engineer specializing in building
+              exceptional digital experiences. I'm currently working at
+              Mindlogic in Seoul, South Korea as Industrial Technical Personnel
+              (substituting mandatory military duty for South Korea).
             </p>
             <p>
-              Fast-forward to today, and I've had the privilege of working at an
-              advertising agency, a start-up, and a tech company. My main focus
-              these days is building accessible, inclusive products and digital
-              experiences for a variety of clients.
+              My journey in web development began during my time at Carnegie
+              Mellon University, where I developed a passion for creating
+              intuitive user interfaces and accessible web applications.
+              Fast-forward to today, and I've had the privilege of working at
+              companies like MongoDB and Deloitte Digital, where I've led the
+              architecture and implementation of various frontend systems and
+              components.
             </p>
             <p>Here are a few technologies I've been working with recently:</p>
 

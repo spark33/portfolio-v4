@@ -21,7 +21,7 @@ const SideLinks: React.FC = () => {
       <ul className="flex flex-col items-start space-y-6">
         <li>
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/spark6"
             target="_blank"
             rel="noopener noreferrer"
             className="text-lightest-slate hover:text-green transition-colors duration-300 text-xl"
@@ -32,7 +32,7 @@ const SideLinks: React.FC = () => {
         </li>
         <li>
           <a
-            href="https://linkedin.com/in/yourusername"
+            href="https://linkedin.com/in/spark6"
             target="_blank"
             rel="noopener noreferrer"
             className="text-lightest-slate hover:text-green transition-colors duration-300 text-xl"
@@ -43,7 +43,7 @@ const SideLinks: React.FC = () => {
         </li>
         <li>
           <a
-            href="https://twitter.com/yourusername"
+            href="https://twitter.com/seanpark"
             target="_blank"
             rel="noopener noreferrer"
             className="text-lightest-slate hover:text-green transition-colors duration-300 text-xl"
@@ -54,7 +54,7 @@ const SideLinks: React.FC = () => {
         </li>
         <li>
           <a
-            href="https://instagram.com/yourusername"
+            href="https://instagram.com/sean.park"
             target="_blank"
             rel="noopener noreferrer"
             className="text-lightest-slate hover:text-green transition-colors duration-300 text-xl"
@@ -65,7 +65,7 @@ const SideLinks: React.FC = () => {
         </li>
         <li>
           <a
-            href="mailto:your.email@example.com"
+            href="mailto:spark@mindlogic.ai"
             className="text-lightest-slate hover:text-green transition-colors duration-300 text-xl"
             aria-label="Email"
           >

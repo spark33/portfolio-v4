@@ -18,21 +18,31 @@ const SideNav: React.FC = () => {
     const handleScroll = () => {
       const sections = document.querySelectorAll("section[id]");
 
+      let currentActiveSection = "";
+      let minDistance = Number.MAX_VALUE;
+
       sections.forEach((section) => {
         const sectionTop = section.getBoundingClientRect().top;
         const sectionId = section.getAttribute("id");
 
-        if (sectionTop < 200 && sectionTop >= -200 && sectionId) {
-          setActiveSection(sectionId);
+        // Find the section closest to the top of the viewport
+        const absDistance = Math.abs(sectionTop);
+        if (absDistance < minDistance && sectionId) {
+          minDistance = absDistance;
+          currentActiveSection = sectionId;
         }
       });
+
+      if (currentActiveSection !== activeSection) {
+        setActiveSection(currentActiveSection);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
     handleScroll(); // Check on mount
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [activeSection]);
 
   const navLinks: NavLink[] = [
     { name: "About", url: "#about" },
@@ -85,15 +95,26 @@ const SideNav: React.FC = () => {
               <li key={i}>
                 <Link
                   href={link.url}
-                  className={`text-lg font-mono ${
-                    activeSection === link.url.substring(1)
-                      ? "text-green"
-                      : "text-lightest-slate"
-                  } hover:text-green`}
+                  className="group flex items-center text-lg font-mono"
                   onClick={() => setIsOpen(false)}
                 >
                   <span className="text-green">{`0${i + 1}. `}</span>
-                  {link.name}
+                  <span
+                    className={`relative ${
+                      activeSection === link.url.substring(1)
+                        ? "text-green"
+                        : "text-lightest-slate"
+                    } transition-colors duration-300`}
+                  >
+                    {link.name}
+                    <span
+                      className={`absolute -bottom-1 left-0 h-[2px] bg-green transition-all duration-300 ${
+                        activeSection === link.url.substring(1)
+                          ? "w-full"
+                          : "w-0 group-hover:w-full"
+                      }`}
+                    ></span>
+                  </span>
                 </Link>
               </li>
             ))}
@@ -130,35 +151,49 @@ const SideNav: React.FC = () => {
           className="flex-grow"
         >
           <h1 className="text-4xl md:text-5xl font-bold text-lightest-slate mb-4">
-            Shiyu Park
+            Sean Park
           </h1>
           <h2 className="text-2xl md:text-3xl font-bold text-slate mb-8">
-            Software Engineer
+            Frontend Engineer
           </h2>
           <p className="text-lg text-slate mb-12 max-w-md pr-4">
-            I build accessible, human-centered products and digital experiences
-            for the web.
+            I design and build exceptional digital experiences with a focus on
+            UI/UX and frontend architecture.
           </p>
 
           <nav className="mb-12">
             <ul className="space-y-4">
               {navLinks.map((link, i) => (
-                <li key={i}>
+                <li key={i} className="overflow-hidden">
                   <Link
                     href={link.url}
-                    className={`text-base font-mono relative group flex items-center ${
-                      activeSection === link.url.substring(1)
-                        ? "text-green"
-                        : "text-lightest-slate"
-                    } hover:text-green`}
+                    className="text-base font-mono relative group flex items-center"
                   >
                     <span className="text-green w-8">{`0${i + 1}.`}</span>
-                    {link.name}
-                    <span
-                      className={`h-[1px] w-0 group-hover:w-16 transition-all duration-300 bg-green ml-2 ${
-                        activeSection === link.url.substring(1) ? "w-16" : ""
-                      }`}
-                    ></span>
+                    <motion.div
+                      className="relative"
+                      animate={{
+                        color:
+                          activeSection === link.url.substring(1)
+                            ? "rgb(100, 255, 218)"
+                            : "rgb(204, 214, 246)",
+                      }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      {link.name}
+                      <motion.span
+                        className="absolute -bottom-1 left-0 h-[2px] bg-green"
+                        initial={{ width: 0 }}
+                        animate={{
+                          width:
+                            activeSection === link.url.substring(1)
+                              ? "100%"
+                              : "0%",
+                        }}
+                        whileHover={{ width: "100%" }}
+                        transition={{ duration: 0.3 }}
+                      ></motion.span>
+                    </motion.div>
                   </Link>
                 </li>
               ))}

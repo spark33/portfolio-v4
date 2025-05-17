@@ -27,12 +27,13 @@ export default function Home() {
             Get In Touch
           </h3>
           <p className="text-lg mb-8 max-w-xl">
-            I'm currently looking for new opportunities. Whether you have a
-            question or just want to say hi, I'll try my best to get back to
-            you!
+            I'm always interested in new opportunities to collaborate on
+            innovative projects. Whether you're looking for a frontend developer
+            for a project, have a question about my work, or just want to
+            connect, feel free to reach out!
           </p>
           <a
-            href="mailto:your.email@example.com"
+            href="mailto:spark@mindlogic.ai"
             className="border border-green text-green px-7 py-4 rounded font-mono hover:bg-green/10 transition-colors duration-300 inline-block"
           >
             Say Hello

@@ -29,7 +29,12 @@ const config: Config = {
           "sans-serif",
         ],
       },
+      zIndex: {
+        "100": "100",
+      },
     },
   },
   plugins: [],
 };
+
+export default config;
