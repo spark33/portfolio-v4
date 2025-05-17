@@ -5,6 +5,18 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const About: React.FC = () => {
+  // Store text with apostrophes in variables to avoid React unescaped entity errors
+  const paragraph1 =
+    "Hello! I'm Sean Park, a frontend engineer specializing in building exceptional digital experiences. I'm currently working at Mindlogic in Seoul, South Korea as Industrial Technical Personnel (substituting mandatory military duty for South Korea).";
+  const paragraph2 =
+    "I believe great digital experiences happen at the sweet spot where code meets design meets human needs. As a frontend engineer who's equally at home architecting component systems and crafting micro-interactions, I bring a holistic view that makes complex technologies feel surprisingly simple.";
+  const paragraph3 =
+    "My journey has taken me from building AI chatbots at Mindlogic and MongoDB to mentoring development teams at Deloitte Digital. Along the way, I've discovered that my favorite problems to solve are the ones that require thinking beyond traditional engineering boundaries.";
+  const paragraph4 =
+    "When I'm not obsessing over performance optimizations or animation timings, you might find me exploring how emerging technologies can create more intuitive, delightful experiences. I'm looking for a founding role where this blend of technical precision and human empathy can help build something meaningful from the ground up.";
+  const paragraph5 =
+    "Here are a few technologies I've been working with recently:";
+
   const skills: string[] = [
     "React",
     "React Native",
@@ -44,34 +56,11 @@ const About: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <div className="space-y-4 text-text-secondary">
-            <p>
-              Hello! I'm Sean Park, a frontend engineer specializing in building
-              exceptional digital experiences. I'm currently working at
-              Mindlogic in Seoul, South Korea as Industrial Technical Personnel
-              (substituting mandatory military duty for South Korea).
-            </p>
-            <p>
-              I believe great digital experiences happen at the sweet spot where
-              code meets design meets human needs. As a frontend engineer who's
-              equally at home architecting component systems and crafting
-              micro-interactions, I bring a holistic view that makes complex
-              technologies feel surprisingly simple.
-            </p>
-            <p>
-              My journey has taken me from building AI chatbots at Mindlogic and
-              MongoDB to mentoring development teams at Deloitte Digital. Along
-              the way, I've discovered that my favorite problems to solve are
-              the ones that require thinking beyond traditional engineering
-              boundaries.{" "}
-            </p>
-            <p>
-              When I'm not obsessing over performance optimizations or animation
-              timings, you might find me exploring how emerging technologies can
-              create more intuitive, delightful experiences. I'm looking for a
-              founding role where this blend of technical precision and human
-              empathy can help build something meaningful from the ground up.
-            </p>
-            <p>Here are a few technologies I've been working with recently:</p>
+            <p>{paragraph1}</p>
+            <p>{paragraph2}</p>
+            <p>{paragraph3}</p>
+            <p>{paragraph4}</p>
+            <p>{paragraph5}</p>
 
             <ul className="grid grid-cols-2 gap-2 mt-4">
               {skills.map((skill, i) => (

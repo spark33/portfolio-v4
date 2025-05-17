@@ -4,10 +4,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-interface JobSkill {
-  readonly [key: string]: string;
-}
-
 interface Job {
   company: string;
   title: string;
@@ -17,6 +13,9 @@ interface Job {
 }
 
 const Experience: React.FC = () => {
+  // Store text with apostrophes in variables to avoid React unescaped entity errors
+  const sectionTitle = "Where I've Worked";
+
   const jobs: Job[] = [
     {
       company: "Mindlogic Inc",
@@ -87,7 +86,7 @@ const Experience: React.FC = () => {
         >
           02.
         </span>
-        Where I've Worked
+        {sectionTitle}
         <span className="ml-4 h-px bg-background-lighter flex-grow"></span>
       </motion.h2>
 

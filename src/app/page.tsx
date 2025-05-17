@@ -4,6 +4,10 @@ import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 
 export default function Home() {
+  // Store text with apostrophes in variables to avoid React unescaped entity errors
+  const contactText =
+    "I'm always interested in new opportunities to collaborate on innovative projects. Whether you're looking for a frontend developer for a project, have a question about my work, or just want to connect, feel free to reach out!";
+
   return (
     <div className="max-w-3xl">
       <section id="about" className="mb-32">
@@ -33,12 +37,7 @@ export default function Home() {
           <h3 className="text-3xl text-text-primary font-semibold mb-6">
             Get In Touch
           </h3>
-          <p className="text-lg mb-8 max-w-xl">
-            I'm always interested in new opportunities to collaborate on
-            innovative projects. Whether you're looking for a frontend developer
-            for a project, have a question about my work, or just want to
-            connect, feel free to reach out!
-          </p>
+          <p className="text-lg mb-8 max-w-xl">{contactText}</p>
           <a
             href="mailto:spark@mindlogic.ai"
             className="border px-7 py-4 rounded font-mono hover:bg-primary-10 transition-colors duration-300 inline-block"

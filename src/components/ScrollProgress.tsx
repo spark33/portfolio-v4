@@ -1,11 +1,10 @@
 "use client";
 
 import React from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 
 const ScrollProgress: React.FC = () => {
   const { scrollYProgress } = useScroll();
-  const opacity = useTransform(scrollYProgress, [0, 0.05, 0.1], [0, 0.5, 1]);
 
   return (
     <motion.div

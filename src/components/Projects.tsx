@@ -15,11 +15,21 @@ interface Project {
 }
 
 const Projects: React.FC = () => {
+  // Store text with apostrophes in variables to avoid React unescaped entity errors
+  const sectionTitle = "Some Things I've Built";
+  const mindlogicPluginDesc =
+    "Designed and built an embeddable AI chatbot plugin supporting 5 locales with a customizable UI. This plugin allows seamless integration of Mindlogic's AI capabilities into any website, with a focus on user experience and customization options.";
+  const mindlogicDocsDesc =
+    "Developed the documentation site for Mindlogic's products, providing comprehensive guides, API documentation, and integration examples. Built with NextJS and optimized for developer experience and ease of navigation.";
+  const mongodbDesc =
+    "Led the architecture and implementation of MongoDB's first reusable AI chatbot UI component library. This system was built using ReactJS and enabled consistent chatbot experiences across MongoDB's digital products.";
+  const trialFinderDesc =
+    "Awarded Best Healthcare Hack at University of Pittsburgh's SteelHacks. TrialFinder matched patients to open clinical trials from the NIH database by cross-checking the eligibility criteria for the study with the patient's personal health profile.";
+
   const featuredProjects: Project[] = [
     {
       title: "Mindlogic Chat Plugin",
-      description:
-        "Designed and built an embeddable AI chatbot plugin supporting 5 locales with a customizable UI. This plugin allows seamless integration of Mindlogic's AI capabilities into any website, with a focus on user experience and customization options.",
+      description: mindlogicPluginDesc,
       tags: [
         "React",
         "TypeScript",
@@ -32,8 +42,7 @@ const Projects: React.FC = () => {
     },
     {
       title: "Mindlogic Documentation Site",
-      description:
-        "Developed the documentation site for Mindlogic's products, providing comprehensive guides, API documentation, and integration examples. Built with NextJS and optimized for developer experience and ease of navigation.",
+      description: mindlogicDocsDesc,
       tags: [
         "NextJS",
         "React",
@@ -54,8 +63,7 @@ const Projects: React.FC = () => {
     },
     {
       title: "MongoDB AI Chatbot UI Component Library",
-      description:
-        "Led the architecture and implementation of MongoDB's first reusable AI chatbot UI component library. This system was built using ReactJS and enabled consistent chatbot experiences across MongoDB's digital products.",
+      description: mongodbDesc,
       tags: [
         "React",
         "TypeScript",
@@ -98,8 +106,7 @@ const Projects: React.FC = () => {
     },
     {
       title: "TrialFinder",
-      description:
-        "Awarded Best Healthcare Hack at University of Pittsburgh's SteelHacks. TrialFinder matched patients to open clinical trials from the NIH database by cross-checking the eligibility criteria for the study with the patient's personal health profile.",
+      description: trialFinderDesc,
       tags: ["Healthcare", "API Integration", "Hackathon Project"],
     },
   ];
@@ -119,7 +126,7 @@ const Projects: React.FC = () => {
         >
           03.
         </span>
-        Some Things I've Built
+        {sectionTitle}
         <span className="ml-4 h-px bg-background-lighter flex-grow"></span>
       </motion.h2>
 
