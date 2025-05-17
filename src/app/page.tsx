@@ -19,11 +19,18 @@ export default function Home() {
       </section>
 
       <section id="contact" className="mb-32">
-        <h2 className="section-heading">
-          <span className="section-number">04.</span> Contact
+        <h2 className="flex items-center text-2xl font-semibold text-text-primary mb-8">
+          <span
+            className="font-mono mr-2 text-xl"
+            style={{ color: "var(--color-primary)" }}
+          >
+            04.
+          </span>
+          Contact
+          <span className="ml-4 h-px bg-background-lighter flex-grow"></span>
         </h2>
         <div className="mt-8">
-          <h3 className="text-3xl text-lightest-slate font-semibold mb-6">
+          <h3 className="text-3xl text-text-primary font-semibold mb-6">
             Get In Touch
           </h3>
           <p className="text-lg mb-8 max-w-xl">
@@ -34,7 +41,11 @@ export default function Home() {
           </p>
           <a
             href="mailto:spark@mindlogic.ai"
-            className="border border-green text-green px-7 py-4 rounded font-mono hover:bg-green/10 transition-colors duration-300 inline-block"
+            className="border px-7 py-4 rounded font-mono hover:bg-primary-10 transition-colors duration-300 inline-block"
+            style={{
+              color: "var(--color-primary)",
+              borderColor: "var(--color-primary)",
+            }}
           >
             Say Hello
           </a>

@@ -24,7 +24,7 @@ const SideLinks: React.FC = () => {
             href="https://github.com/spark6"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-lightest-slate hover:text-green transition-colors duration-300 text-xl"
+            className="text-text-primary hover:text-primary transition-colors duration-300 text-xl"
             aria-label="GitHub"
           >
             <FiGithub />
@@ -35,7 +35,7 @@ const SideLinks: React.FC = () => {
             href="https://linkedin.com/in/spark6"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-lightest-slate hover:text-green transition-colors duration-300 text-xl"
+            className="text-text-primary hover:text-primary transition-colors duration-300 text-xl"
             aria-label="LinkedIn"
           >
             <FiLinkedin />
@@ -46,7 +46,7 @@ const SideLinks: React.FC = () => {
             href="https://twitter.com/seanpark"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-lightest-slate hover:text-green transition-colors duration-300 text-xl"
+            className="text-text-primary hover:text-primary transition-colors duration-300 text-xl"
             aria-label="Twitter"
           >
             <FiTwitter />
@@ -57,7 +57,7 @@ const SideLinks: React.FC = () => {
             href="https://instagram.com/sean.park"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-lightest-slate hover:text-green transition-colors duration-300 text-xl"
+            className="text-text-primary hover:text-primary transition-colors duration-300 text-xl"
             aria-label="Instagram"
           >
             <FiInstagram />
@@ -66,14 +66,14 @@ const SideLinks: React.FC = () => {
         <li>
           <a
             href="mailto:spark@mindlogic.ai"
-            className="text-lightest-slate hover:text-green transition-colors duration-300 text-xl"
+            className="text-text-primary hover:text-primary transition-colors duration-300 text-xl"
             aria-label="Email"
           >
             <FiMail />
           </a>
         </li>
         <li className="pt-4">
-          <div className="h-24 w-[1px] bg-lightest-slate"></div>
+          <div className="h-24 w-[1px] bg-text-primary"></div>
         </li>
       </ul>
     </motion.div>

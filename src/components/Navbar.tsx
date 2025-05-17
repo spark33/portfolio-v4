@@ -33,13 +33,13 @@ const Navbar: React.FC = () => {
   return (
     <header
       className={`fixed w-full top-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-navy/90 backdrop-blur shadow-lg py-4" : "py-6"
+        scrolled ? "bg-background/90 backdrop-blur shadow-lg py-4" : "py-6"
       }`}
     >
       <nav className="px-6 md:px-12 lg:px-24 max-w-7xl mx-auto flex justify-between items-center">
         <Link
           href="/"
-          className="font-bold text-2xl text-lightest-slate hover:text-green"
+          className="font-bold text-2xl text-text-primary hover:text-primary"
         >
           YN
         </Link>
@@ -48,8 +48,11 @@ const Navbar: React.FC = () => {
         <ul className="hidden md:flex space-x-1">
           {navLinks.map((link, i) => (
             <li key={i}>
-              <Link href={link.url} className="nav-link">
-                <span className="text-green font-mono">{`0${i + 1}. `}</span>
+              <Link
+                href={link.url}
+                className="px-3 py-2 text-sm font-mono relative hover:text-primary"
+              >
+                <span className="text-primary font-mono">{`0${i + 1}. `}</span>
                 {link.name}
               </Link>
             </li>
@@ -57,7 +60,7 @@ const Navbar: React.FC = () => {
           <li className="ml-4">
             <a
               href="/resume.pdf"
-              className="border border-green text-green rounded px-4 py-2 text-sm font-mono hover:bg-green/10 transition-colors duration-300"
+              className="border border-primary text-primary rounded px-4 py-2 text-sm font-mono hover:bg-primary-10 transition-colors duration-300"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -68,7 +71,7 @@ const Navbar: React.FC = () => {
 
         {/* Mobile Navigation Toggle */}
         <button
-          className="md:hidden text-lightest-slate text-2xl"
+          className="md:hidden text-text-primary text-2xl"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <FiX /> : <FiMenu />}
@@ -79,12 +82,12 @@ const Navbar: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, x: 100 }}
             animate={{ opacity: 1, x: 0 }}
-            className="fixed top-0 right-0 h-screen w-3/4 bg-light-navy flex flex-col md:hidden z-50 p-6"
+            className="fixed top-0 right-0 h-screen w-3/4 bg-background-light flex flex-col md:hidden z-50 p-6"
           >
             <div className="flex justify-end">
               <button
                 onClick={() => setIsOpen(false)}
-                className="text-lightest-slate text-2xl"
+                className="text-text-primary text-2xl"
               >
                 <FiX />
               </button>
@@ -94,10 +97,10 @@ const Navbar: React.FC = () => {
                 <li key={i} className="text-center">
                   <Link
                     href={link.url}
-                    className="text-lightest-slate text-lg font-mono hover:text-green"
+                    className="text-text-primary text-lg font-mono hover:text-primary"
                     onClick={() => setIsOpen(false)}
                   >
-                    <div className="text-green">{`0${i + 1}.`}</div>
+                    <div className="text-primary">{`0${i + 1}.`}</div>
                     {link.name}
                   </Link>
                 </li>
@@ -105,7 +108,7 @@ const Navbar: React.FC = () => {
               <li className="mt-8">
                 <a
                   href="/resume.pdf"
-                  className="border border-green text-green rounded px-6 py-3 font-mono hover:bg-green/10 transition-colors duration-300"
+                  className="border border-primary text-primary rounded px-6 py-3 font-mono hover:bg-primary-10 transition-colors duration-300"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setIsOpen(false)}

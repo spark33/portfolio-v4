@@ -23,13 +23,22 @@ const Experience: React.FC = () => {
       title: "Frontend Engineer",
       date: "April 2024 - Present",
       duties: [
-        "Designing and building FactChat, a multi-LLM platform designed for education",
-        "Designing and building docs.mindlogic.ai",
-        "Managing the UI/UX design and frontend engineering for the digital transformation of an embeddable AI chatbot plugin supporting 5 locales",
-        "Managing the UI/UX design and frontend engineering for the digital transformation of the UI customization / management dashboard",
-        "Building the company website and other external client POCs and deliverables in React / React Native",
+        "Developed a multilingual embeddable AI chatbot plugin supporting 5 locales with a customizable UI that seamlessly integrates with client websites",
+        "Built and maintained the Mindlogic documentation site (docs.mindlogic.ai) with comprehensive guides, API documentation, and integration examples for developers",
+        "Designed and built FactChat, a multi-LLM platform designed for educational contexts that leverages multiple large language models",
+        "Created an intuitive UI customization dashboard for clients to configure and personalize their chatbot's appearance and behavior",
+        "Implemented internationalization and localization features to support multiple languages across all products",
+        "Collaborated with backend engineers to define and implement API interfaces for all frontend applications",
       ],
-      skills: ["React", "React Native", "NextJS", "UI/UX Design"],
+      skills: [
+        "React",
+        "React Native",
+        "NextJS",
+        "TypeScript",
+        "UI/UX Design",
+        "Internationalization",
+        "API Design",
+      ],
     },
     {
       company: "MongoDB",
@@ -66,13 +75,20 @@ const Experience: React.FC = () => {
   return (
     <>
       <motion.h2
-        className="section-heading"
+        className="flex items-center text-2xl font-semibold text-text-primary mb-8"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <span className="section-number">02.</span> Where I've Worked
+        <span
+          className="font-mono mr-2 text-xl"
+          style={{ color: "var(--color-primary)" }}
+        >
+          02.
+        </span>
+        Where I've Worked
+        <span className="ml-4 h-px bg-background-lighter flex-grow"></span>
       </motion.h2>
 
       <div className="mt-10 space-y-16">
@@ -87,27 +103,38 @@ const Experience: React.FC = () => {
           >
             {/* Timeline connector */}
             {jobIndex < jobs.length - 1 && (
-              <div className="absolute left-[7px] top-[70px] bottom-[-80px] w-[2px] bg-lightest-navy"></div>
+              <div className="absolute left-[7px] top-[70px] bottom-[-80px] w-[2px] bg-background-lighter"></div>
             )}
 
             {/* Experience card */}
             <div className="flex gap-5">
               {/* Timeline dot */}
-              <div className="flex-shrink-0 w-4 h-4 rounded-full bg-green mt-[6px] z-10"></div>
+              <div className="flex-shrink-0 w-4 h-4 rounded-full bg-primary mt-[6px] z-10"></div>
 
               {/* Content */}
               <div className="flex-grow">
-                <h3 className="text-xl text-lightest-slate font-medium flex flex-wrap items-baseline">
+                <h3 className="text-xl text-text-primary font-medium flex flex-wrap items-baseline">
                   <span>{job.title}</span>
-                  <span className="text-green ml-2"> @ {job.company}</span>
+                  <span
+                    className="ml-2"
+                    style={{ color: "var(--color-primary)" }}
+                  >
+                    {" "}
+                    @ {job.company}
+                  </span>
                 </h3>
-                <p className="font-mono text-sm mt-1 mb-4 text-slate">
+                <p className="font-mono text-sm mt-1 mb-4 text-text-secondary">
                   {job.date}
                 </p>
                 <ul className="space-y-4 mb-4">
                   {job.duties.map((duty, i) => (
                     <li key={i} className="flex items-start">
-                      <span className="text-green mr-2 mt-1">▹</span>
+                      <span
+                        className="mr-2 mt-1"
+                        style={{ color: "var(--color-primary)" }}
+                      >
+                        ▹
+                      </span>
                       <span>{duty}</span>
                     </li>
                   ))}
@@ -116,7 +143,8 @@ const Experience: React.FC = () => {
                   {job.skills.map((skill, i) => (
                     <span
                       key={i}
-                      className="inline-flex items-center px-4 py-1.5 bg-navy border border-lightest-navy rounded-full text-green text-xs font-mono whitespace-nowrap"
+                      className="inline-flex items-center px-4 py-1.5 bg-background border border-background-lighter rounded-full text-xs font-mono whitespace-nowrap"
+                      style={{ color: "var(--color-primary)" }}
                     >
                       {skill}
                     </span>

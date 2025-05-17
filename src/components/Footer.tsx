@@ -44,19 +44,19 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer id="contact" className="py-16 bg-navy">
+    <footer id="contact" className="py-16 bg-background">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 text-center">
-        <h2 className="font-mono text-green mb-4">04. What's Next?</h2>
-        <h3 className="text-4xl font-semibold text-lightest-slate mb-4">
+        <h2 className="font-mono text-primary mb-4">04. What's Next?</h2>
+        <h3 className="text-4xl font-semibold text-text-primary mb-4">
           Get In Touch
         </h3>
-        <p className="text-slate max-w-md mx-auto mb-10">
+        <p className="text-text-secondary max-w-md mx-auto mb-10">
           Whether you have a question or just want to say hi, my inbox is always
           open. I'll try my best to get back to you!
         </p>
         <a
           href="mailto:your.email@example.com"
-          className="inline-block border border-green text-green rounded px-7 py-4 font-mono hover:bg-green/10 transition-colors duration-300 mb-16"
+          className="inline-block border border-primary text-primary rounded px-7 py-4 font-mono hover:bg-primary-10 transition-colors duration-300 mb-16"
         >
           Say Hello
         </a>
@@ -73,7 +73,7 @@ const Footer: React.FC = () => {
           ))}
         </div>
 
-        <p className="font-mono text-xs text-slate">
+        <p className="font-mono text-xs text-text-secondary">
           Designed & Built by Your Name
         </p>
       </div>

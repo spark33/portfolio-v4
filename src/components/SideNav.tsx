@@ -57,12 +57,12 @@ const SideNav: React.FC = () => {
       <div className="flex justify-between items-center py-6 lg:hidden">
         <Link
           href="/"
-          className="font-bold text-2xl text-lightest-slate hover:text-green"
+          className="font-bold text-2xl text-text-primary hover:text-primary"
         >
           SP
         </Link>
         <button
-          className="text-lightest-slate text-2xl"
+          className="text-text-primary text-2xl"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <FiX /> : <FiMenu />}
@@ -74,18 +74,18 @@ const SideNav: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
-          className="fixed inset-0 bg-navy z-50 p-8 lg:hidden"
+          className="fixed inset-0 bg-background z-50 p-8 lg:hidden"
         >
           <div className="flex justify-between items-center mb-12">
             <Link
               href="/"
-              className="font-bold text-2xl text-lightest-slate hover:text-green"
+              className="font-bold text-2xl text-text-primary hover:text-primary"
             >
               SP
             </Link>
             <button
               onClick={() => setIsOpen(false)}
-              className="text-lightest-slate text-2xl"
+              className="text-text-primary text-2xl"
             >
               <FiX />
             </button>
@@ -98,17 +98,17 @@ const SideNav: React.FC = () => {
                   className="group flex items-center text-lg font-mono"
                   onClick={() => setIsOpen(false)}
                 >
-                  <span className="text-green">{`0${i + 1}. `}</span>
+                  <span className="text-primary">{`0${i + 1}. `}</span>
                   <span
                     className={`relative ${
                       activeSection === link.url.substring(1)
-                        ? "text-green"
-                        : "text-lightest-slate"
+                        ? "text-primary"
+                        : "text-text-primary"
                     } transition-colors duration-300`}
                   >
                     {link.name}
                     <span
-                      className={`absolute -bottom-1 left-0 h-[2px] bg-green transition-all duration-300 ${
+                      className={`absolute -bottom-1 left-0 h-[2px] bg-primary transition-all duration-300 ${
                         activeSection === link.url.substring(1)
                           ? "w-full"
                           : "w-0 group-hover:w-full"
@@ -121,7 +121,7 @@ const SideNav: React.FC = () => {
             <li className="mt-8">
               <a
                 href="/resume.pdf"
-                className="border border-green text-green rounded px-6 py-3 font-mono hover:bg-green/10 transition-colors duration-300 inline-block"
+                className="border border-primary text-primary rounded px-6 py-3 font-mono hover:bg-primary-10 transition-colors duration-300 inline-block"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
@@ -138,7 +138,7 @@ const SideNav: React.FC = () => {
         <div className="mb-12">
           <Link
             href="/"
-            className="font-bold text-4xl text-lightest-slate hover:text-green"
+            className="font-bold text-4xl text-text-primary hover:text-primary"
           >
             SP
           </Link>
@@ -150,13 +150,13 @@ const SideNav: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="flex-grow"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-lightest-slate mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-text-primary mb-4">
             Sean Park
           </h1>
-          <h2 className="text-2xl md:text-3xl font-bold text-slate mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-text-secondary mb-8">
             Frontend Engineer
           </h2>
-          <p className="text-lg text-slate mb-12 max-w-md pr-4">
+          <p className="text-lg text-text-secondary mb-12 max-w-md pr-4">
             I design and build exceptional digital experiences with a focus on
             UI/UX and frontend architecture.
           </p>
@@ -169,7 +169,7 @@ const SideNav: React.FC = () => {
                     href={link.url}
                     className="text-base font-mono relative group flex items-center"
                   >
-                    <span className="text-green w-8">{`0${i + 1}.`}</span>
+                    <span className="text-primary w-8">{`0${i + 1}.`}</span>
                     <motion.div
                       className="relative"
                       animate={{
@@ -182,7 +182,7 @@ const SideNav: React.FC = () => {
                     >
                       {link.name}
                       <motion.span
-                        className="absolute -bottom-1 left-0 h-[2px] bg-green"
+                        className="absolute -bottom-1 left-0 h-[2px] bg-primary"
                         initial={{ width: 0 }}
                         animate={{
                           width:
@@ -202,7 +202,7 @@ const SideNav: React.FC = () => {
 
           <a
             href="/resume.pdf"
-            className="border border-green text-green rounded px-6 py-3 font-mono hover:bg-green/10 transition-colors duration-300 inline-block"
+            className="border border-primary text-primary rounded px-6 py-3 font-mono hover:bg-primary-10 transition-colors duration-300 inline-block"
             target="_blank"
             rel="noopener noreferrer"
           >

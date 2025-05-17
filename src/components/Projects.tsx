@@ -17,6 +17,34 @@ interface Project {
 const Projects: React.FC = () => {
   const featuredProjects: Project[] = [
     {
+      title: "Mindlogic Chat Plugin",
+      description:
+        "Designed and built an embeddable AI chatbot plugin supporting 5 locales with a customizable UI. This plugin allows seamless integration of Mindlogic's AI capabilities into any website, with a focus on user experience and customization options.",
+      tags: [
+        "React",
+        "TypeScript",
+        "Internationalization",
+        "UI/UX Design",
+        "Embeddable SDK",
+      ],
+      image: "/mindlogic-plugin.jpg",
+      external: "https://docs.mindlogic.ai/docs/plugin",
+    },
+    {
+      title: "Mindlogic Documentation Site",
+      description:
+        "Developed the documentation site for Mindlogic's products, providing comprehensive guides, API documentation, and integration examples. Built with NextJS and optimized for developer experience and ease of navigation.",
+      tags: [
+        "NextJS",
+        "React",
+        "TypeScript",
+        "Technical Documentation",
+        "Developer Experience",
+      ],
+      image: "/mindlogic-docs.jpg",
+      external: "https://docs.mindlogic.ai",
+    },
+    {
       title: "FactChat",
       description:
         "A multi-LLM platform designed for education. The platform leverages multiple large language models to provide educational content and enhance learning experiences. Built with a focus on user experience and educational efficacy.",
@@ -79,13 +107,20 @@ const Projects: React.FC = () => {
   return (
     <>
       <motion.h2
-        className="section-heading"
+        className="flex items-center text-2xl font-semibold text-text-primary mb-8"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <span className="section-number">03.</span> Some Things I've Built
+        <span
+          className="font-mono mr-2 text-xl"
+          style={{ color: "var(--color-primary)" }}
+        >
+          03.
+        </span>
+        Some Things I've Built
+        <span className="ml-4 h-px bg-background-lighter flex-grow"></span>
       </motion.h2>
 
       {/* Featured Projects */}
@@ -107,8 +142,8 @@ const Projects: React.FC = () => {
                 }`}
               >
                 <div className="relative h-64 rounded overflow-hidden">
-                  <div className="absolute inset-0 bg-green/20 z-10 hover:bg-transparent transition-all duration-300"></div>
-                  <div className="absolute inset-0 bg-navy/30 z-20 hover:bg-transparent transition-all duration-300"></div>
+                  <div className="absolute inset-0 bg-primary-20 z-10 hover:bg-transparent transition-all duration-300"></div>
+                  <div className="absolute inset-0 bg-background/30 z-20 hover:bg-transparent transition-all duration-300"></div>
                   <div className="h-full w-full bg-gray-800 flex items-center justify-center">
                     <span className="text-white">
                       Project Image Placeholder
@@ -128,12 +163,17 @@ const Projects: React.FC = () => {
                     i % 2 === 0 ? "md:items-end md:text-right" : ""
                   }`}
                 >
-                  <p className="font-mono text-green mb-1">Featured Project</p>
-                  <h3 className="text-2xl font-semibold text-lightest-slate mb-4">
+                  <p
+                    className="font-mono mb-1"
+                    style={{ color: "var(--color-primary)" }}
+                  >
+                    Featured Project
+                  </p>
+                  <h3 className="text-2xl font-semibold text-text-primary mb-4">
                     {project.title}
                   </h3>
-                  <div className="p-5 bg-light-navy rounded-md shadow-lg mb-4">
-                    <p className="text-slate">{project.description}</p>
+                  <div className="p-5 bg-background-light rounded-md shadow-lg mb-4">
+                    <p className="text-text-secondary">{project.description}</p>
                   </div>
                   <ul
                     className={`flex flex-wrap gap-3 mb-4 ${
@@ -141,7 +181,10 @@ const Projects: React.FC = () => {
                     }`}
                   >
                     {project.tags.map((tag, j) => (
-                      <li key={j} className="font-mono text-xs text-slate">
+                      <li
+                        key={j}
+                        className="font-mono text-xs text-text-secondary"
+                      >
                         {tag}
                       </li>
                     ))}
@@ -152,7 +195,7 @@ const Projects: React.FC = () => {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-lightest-slate hover:text-green"
+                        className="text-text-primary hover:text-primary"
                         aria-label="GitHub Repository"
                       >
                         <FiGithub size={20} />
@@ -163,7 +206,7 @@ const Projects: React.FC = () => {
                         href={project.external}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-lightest-slate hover:text-green"
+                        className="text-text-primary hover:text-primary"
                         aria-label="External Link"
                       >
                         <FiExternalLink size={20} />
@@ -185,7 +228,7 @@ const Projects: React.FC = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <h3 className="text-2xl font-semibold text-lightest-slate mb-10 text-center">
+        <h3 className="text-2xl font-semibold text-text-primary mb-10 text-center">
           Other Noteworthy Projects
         </h3>
 
@@ -193,14 +236,14 @@ const Projects: React.FC = () => {
           {otherProjects.map((project, i) => (
             <motion.div
               key={i}
-              className="card flex flex-col h-full bg-light-navy rounded-md p-6"
+              className="flex flex-col h-full bg-background-light rounded-md p-6 transition-all duration-300 hover:-translate-y-1"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.3, delay: i * 0.1 }}
             >
               <div className="flex justify-between items-center mb-6">
-                <div className="text-green">
+                <div style={{ color: "var(--color-primary)" }}>
                   <svg
                     width="40"
                     height="40"
@@ -227,7 +270,7 @@ const Projects: React.FC = () => {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-lightest-slate hover:text-green"
+                      className="text-text-primary hover:text-primary"
                       aria-label="GitHub Repository"
                     >
                       <FiGithub size={18} />
@@ -238,7 +281,7 @@ const Projects: React.FC = () => {
                       href={project.external}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-lightest-slate hover:text-green"
+                      className="text-text-primary hover:text-primary"
                       aria-label="External Link"
                     >
                       <FiExternalLink size={18} />
@@ -247,15 +290,17 @@ const Projects: React.FC = () => {
                 </div>
               </div>
 
-              <h4 className="text-xl font-semibold text-lightest-slate mb-2">
+              <h4 className="text-xl font-semibold text-text-primary mb-2">
                 {project.title}
               </h4>
 
-              <p className="text-slate mb-8 flex-grow">{project.description}</p>
+              <p className="text-text-secondary mb-8 flex-grow">
+                {project.description}
+              </p>
 
               <ul className="flex flex-wrap gap-2 mt-auto">
                 {project.tags.map((tag, j) => (
-                  <li key={j} className="font-mono text-xs text-slate">
+                  <li key={j} className="font-mono text-xs text-text-secondary">
                     {tag}
                   </li>
                 ))}

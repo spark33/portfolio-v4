@@ -9,14 +9,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        navy: "#0a192f",
-        "light-navy": "#112240",
-        "lightest-navy": "#233554",
-        slate: "#8892b0",
-        "light-slate": "#a8b2d1",
-        "lightest-slate": "#ccd6f6",
-        white: "#e6f1ff",
-        green: "#64ffda",
+        primary: "var(--color-primary)",
+        "primary-10": "var(--color-primary-10)",
+        "primary-20": "var(--color-primary-20)",
+        secondary: "var(--color-secondary)",
+        "secondary-10": "var(--color-secondary-10)",
+        "secondary-20": "var(--color-secondary-20)",
+        background: "var(--color-background)",
+        "background-light": "var(--color-background-light)",
+        "background-lighter": "var(--color-background-lighter)",
+        "text-primary": "var(--color-text-primary)",
+        "text-secondary": "var(--color-text-secondary)",
+        "text-secondary-light": "var(--color-text-secondary-light)",
+        "text-white": "var(--color-text-white)",
       },
       fontFamily: {
         mono: ["SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", "monospace"],

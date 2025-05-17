@@ -12,14 +12,14 @@ const Hero: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        <p className="text-green font-mono mb-5">Hi, my name is</p>
+        <p className="text-primary font-mono mb-5">Hi, my name is</p>
       </motion.div>
 
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
-        className="text-5xl md:text-7xl font-bold text-lightest-slate mb-4"
+        className="text-5xl md:text-7xl font-bold text-text-primary mb-4"
       >
         Sean Park.
       </motion.h1>
@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
-        className="text-4xl md:text-6xl font-bold text-slate mb-8"
+        className="text-4xl md:text-6xl font-bold text-text-secondary mb-8"
       >
         I design and build digital experiences.
       </motion.h2>
@@ -37,7 +37,7 @@ const Hero: React.FC = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.5 }}
-        className="max-w-lg text-lg text-slate mb-12"
+        className="max-w-lg text-lg text-text-secondary mb-12"
       >
         I'm a frontend engineer specializing in building exceptional digital
         experiences. Currently at Mindlogic, I focus on designing and
@@ -52,7 +52,7 @@ const Hero: React.FC = () => {
       >
         <a
           href="#projects"
-          className="border border-green text-green px-7 py-4 rounded font-mono hover:bg-green/10 transition-colors duration-300"
+          className="border border-primary text-primary px-7 py-4 rounded font-mono hover:bg-primary-10 transition-colors duration-300"
         >
           Check out my work!
         </a>

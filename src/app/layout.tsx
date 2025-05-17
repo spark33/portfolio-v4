@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} bg-navy text-slate`}>
+      <body className={`${inter.className} bg-background text-text-secondary`}>
         <ScrollProgress />
         <div className="mx-auto max-w-screen-2xl px-6 md:px-12 lg:px-24">
           <div className="grid grid-cols-1 lg:grid-cols-12 min-h-screen gap-8 lg:gap-12">

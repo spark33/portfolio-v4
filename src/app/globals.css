@@ -6,8 +6,8 @@
   }
 
   body {
-    background-color: #0a192f; /* navy */
-    color: #8892b0; /* slate */
+    background-color: var(--color-background);
+    color: var(--color-text-secondary);
     font-family: "Calibre", "Inter", "San Francisco", "SF Pro Text", system-ui,
       sans-serif;
   }
@@ -18,70 +18,114 @@
   h4,
   h5,
   h6 {
-    color: #ccd6f6; /* lightest-slate */
-    font-weight: 600; /* semibold */
+    color: var(--color-text-primary);
+    font-weight: 600;
   }
 
   a {
-    color: #8892b0; /* slate */
+    color: var(--color-text-secondary);
     transition-property: color;
     transition-duration: 300ms;
   }
 
   a:hover {
-    color: #64ffda; /* green */
+    color: var(--color-primary);
   }
 }
 
-@layer components {
-  .nav-link {
-    padding: 0.75rem 0.5rem; /* px-3 py-2 */
-    font-size: 0.875rem; /* text-sm */
-    font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
-    position: relative;
-  }
+:root {
+  /* Original teal theme */
+  --color-primary: #64ffda;
+  --color-primary-10: rgba(100, 255, 218, 0.1);
+  --color-primary-20: rgba(100, 255, 218, 0.2);
+  --color-secondary: #64ffda;
+  --color-secondary-10: rgba(100, 255, 218, 0.1);
+  --color-secondary-20: rgba(100, 255, 218, 0.2);
+  --color-background: #0a192f;
+  --color-background-light: #112240;
+  --color-background-lighter: #233554;
+  --color-text-primary: #ccd6f6;
+  --color-text-secondary: #8892b0;
+  --color-text-secondary-light: #a8b2d1;
+  --color-text-white: #e6f1ff;
 
-  .nav-link:hover {
-    color: #64ffda; /* green */
-  }
+  /* Purple/gold theme (uncomment to switch)
+  --color-primary: #2d1b54;
+  --color-primary-10: rgba(45, 27, 84, 0.1);
+  --color-primary-20: rgba(45, 27, 84, 0.2);
+  --color-secondary: #ffd166;
+  --color-secondary-10: rgba(255, 209, 102, 0.1);
+  --color-secondary-20: rgba(255, 209, 102, 0.2);
+  --color-background: #121019;
+  --color-background-light: #1e1a26;
+  --color-background-lighter: #2a2533;
+  --color-text-primary: #e6e6e6;
+  --color-text-secondary: #b8b8b8;
+  --color-text-secondary-light: #cccccc;
+  --color-text-white: #ffffff;
+  */
 
-  .nav-link-active {
-    color: #64ffda; /* green */
-  }
+  /* Forest Green & Coral theme (uncomment to switch)
+  --color-primary: #27553B;
+  --color-primary-10: rgba(39, 85, 59, 0.1);
+  --color-primary-20: rgba(39, 85, 59, 0.2);
+  --color-secondary: #FF7F50;
+  --color-secondary-10: rgba(255, 127, 80, 0.1);
+  --color-secondary-20: rgba(255, 127, 80, 0.2);
+  --color-background: #0F1A14;
+  --color-background-light: #182922;
+  --color-background-lighter: #223831;
+  --color-text-primary: #F5F5F5;
+  --color-text-secondary: #D0D0D0;
+  --color-text-secondary-light: #E0E0E0;
+  --color-text-white: #FFFFFF;
+  */
 
-  .section-heading {
-    display: flex;
-    align-items: center;
-    font-size: 1.5rem; /* text-2xl */
-    color: #ccd6f6; /* lightest-slate */
-    font-weight: 600; /* semibold */
-    margin-bottom: 2rem; /* mb-8 */
-  }
+  /* Burgundy & Mint theme (uncomment to switch)
+  --color-primary: #4A1942;
+  --color-primary-10: rgba(74, 25, 66, 0.1);
+  --color-primary-20: rgba(74, 25, 66, 0.2);
+  --color-secondary: #8BDFCA;
+  --color-secondary-10: rgba(139, 223, 202, 0.1);
+  --color-secondary-20: rgba(139, 223, 202, 0.2);
+  --color-background: #1A0A17;
+  --color-background-light: #280F24;
+  --color-background-lighter: #361531;
+  --color-text-primary: #E0E0E0;
+  --color-text-secondary: #B0B0B0;
+  --color-text-secondary-light: #C8C8C8;
+  --color-text-white: #FFFFFF;
+  */
 
-  .section-heading::after {
-    content: "";
-    margin-left: 1rem; /* ml-4 */
-    height: 1px;
-    background-color: #233554; /* lightest-navy */
-    flex-grow: 1;
-  }
+  /* Slate Blue & Amber theme (uncomment to switch)
+  --color-primary: #3B4D6B;
+  --color-primary-10: rgba(59, 77, 107, 0.1);
+  --color-primary-20: rgba(59, 77, 107, 0.2);
+  --color-secondary: #FFBF00;
+  --color-secondary-10: rgba(255, 191, 0, 0.1);
+  --color-secondary-20: rgba(255, 191, 0, 0.2);
+  --color-background: #1E2433;
+  --color-background-light: #2A3347;
+  --color-background-lighter: #36425B;
+  --color-text-primary: #F8F8F8;
+  --color-text-secondary: #C4C4C4;
+  --color-text-secondary-light: #DEDEDE;
+  --color-text-white: #FFFFFF;
+  */
 
-  .section-number {
-    color: #64ffda; /* green */
-    font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
-    margin-right: 0.5rem; /* mr-2 */
-    font-size: 1.25rem; /* text-xl */
-  }
-
-  .card {
-    padding: 1.5rem; /* p-6 */
-    border-radius: 0.375rem; /* rounded-md */
-    background-color: #112240; /* light-navy */
-    transition-property: all;
-    transition-duration: 300ms;
-  }
-
-  .card:hover {
-    transform: translateY(-5px);
-  }
+  /* Dark Chocolate & Teal theme (uncomment to switch)
+  --color-primary: #2D1E16;
+  --color-primary-10: rgba(45, 30, 22, 0.1);
+  --color-primary-20: rgba(45, 30, 22, 0.2);
+  --color-secondary: #25B0BC;
+  --color-secondary-10: rgba(37, 176, 188, 0.1);
+  --color-secondary-20: rgba(37, 176, 188, 0.2);
+  --color-background: #120D08;
+  --color-background-light: #1D1510;
+  --color-background-lighter: #28201A;
+  --color-text-primary: #F2EDE4;
+  --color-text-secondary: #C5B8A8;
+  --color-text-secondary-light: #D8CFC3;
+  --color-text-white: #FFFFFF;
+  */
 }

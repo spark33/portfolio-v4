@@ -16,7 +16,7 @@ const SocialIcon = ({
       aria-label={label}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-lightest-slate hover:text-green transform hover:-translate-y-1 transition-all duration-300"
+      className="text-text-primary hover:text-primary transform hover:-translate-y-1 transition-all duration-300"
     >
       <div className="text-xl">{icon}</div>
     </a>

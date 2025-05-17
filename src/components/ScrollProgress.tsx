@@ -9,10 +9,9 @@ const ScrollProgress: React.FC = () => {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 right-0 h-1 z-50 origin-left shadow-md"
+      className="fixed top-0 left-0 right-0 h-1 z-50 origin-left shadow-md bg-primary"
       style={{
         scaleX: scrollYProgress,
-        backgroundColor: "#64ffda", // Fallback to hardcoded green color
       }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 0.2 }}
